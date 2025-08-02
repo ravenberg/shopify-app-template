@@ -1,0 +1,38 @@
+# Learn more about configuring your Shopify app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "laravel-shopify-app"
+client_id = ""
+application_url = "https://localhost:8000"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,read_products"
+
+[auth]
+redirect_urls = [
+  "https://localhost:8000/auth/shopify/callback"
+]
+
+[webhooks]
+api_version = "2024-01"
+
+[[webhooks.subscriptions]]
+topics = ["app/uninstalled"]
+uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = ""
+include_config_on_deploy = true
+
+[web]
+type = "php"
+commands.build = "composer install && npm install && npm run build"
+commands.dev = "composer dev"
+
+[web.env]
+PORT = "8000"
