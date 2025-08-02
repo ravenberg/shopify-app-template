@@ -28,11 +28,3 @@ embedded = false
 automatically_update_urls_on_dev = true
 dev_store_url = ""
 include_config_on_deploy = true
-
-[web]
-type = "php"
-commands.build = "composer install && npm install && npm run build"
-commands.dev = "composer dev"
-
-[web.env]
-PORT = "8000"
