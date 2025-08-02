@@ -9,9 +9,7 @@
         "format:check": "prettier --check resources/",
         "lint": "eslint . --fix",
         "types": "tsc --noEmit",
-        "shopify": "shopify",
-        "generate": "shopify app generate",
-        "deploy": "shopify app deploy"
+        "cli-bridge": "node cli-bridge.js"
     },
     "devDependencies": {
         "@eslint/js": "^9.19.0",
