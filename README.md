@@ -74,11 +74,8 @@ npm install
 cp .env.example .env
 php artisan key:generate
 
-# Configure your Shopify app credentials in .env
-SHOPIFY_API_KEY=your_api_key
-SHOPIFY_API_SECRET=your_api_secret
-SHOPIFY_API_SCOPES=write_products,read_products
-SHOPIFY_HOST_NAME=your-app-url.com
+# Shopify credentials are automatically configured by Shopify CLI
+# No manual configuration needed in .env file
 
 # Run database migrations
 php artisan migrate
@@ -89,26 +86,22 @@ composer dev  # Starts Laravel server, queue worker, and Vite
 
 ## 🔧 Environment Variables
 
-Configure these variables in your `.env` file:
+The Shopify CLI automatically configures all necessary Shopify-related environment variables. You only need to configure standard Laravel variables in your `.env` file:
 
 ```env
-# Shopify App Configuration
-SHOPIFY_API_KEY=your_api_key
-SHOPIFY_API_SECRET=your_api_secret
-SHOPIFY_API_SCOPES=write_products,read_products
-SHOPIFY_HOST_NAME=your-app-url.com
-
-# Database Configuration
-DB_CONNECTION=sqlite
-DB_DATABASE=database/database.sqlite
-
 # App Configuration
 APP_NAME="Your Shopify App"
 APP_ENV=local
 APP_KEY=base64:your_generated_key
 APP_DEBUG=true
 APP_URL=http://localhost:8000
+
+# Database Configuration
+DB_CONNECTION=sqlite
+DB_DATABASE=database/database.sqlite
 ```
+
+**Note**: Shopify credentials (API key, secret, scopes, etc.) are automatically injected by the Shopify CLI and read from the `shopify.app.toml` configuration file.
 
 ## 🏗️ Architecture
 
