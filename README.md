@@ -2,13 +2,21 @@
 
 A modern Shopify app template built with Laravel and React, providing a solid foundation for developing Shopify applications with seamless full-stack experience and full Shopify CLI compatibility.
 
-## 🚀 Quick Start with Shopify CLI
+## 🚀 Quick Start with Shopify CLI and Laravel Herd
 
-Create a new Shopify app using this template:
-
+1. Navigate you your Laravel Herd site folder
+2. Create a new Shopify app using this template
 ```bash
-shopify app init --template="https://github.com/your-username/shopify-app-template"
+shopify app init --template="https://github.com/ravenberg/shopify-app-template"
 ```
+3. Share the url through Herd
+```bash
+cd <name-of-app-directory> && herd share
+```
+4. In a separate terminal, start the dev server via shopify api
+```bash
+shopify app dev --tunnel-url=<herd-share-url>
+```   
 
 ## 🛠️ Features
 
@@ -35,8 +43,6 @@ This template uses the official [Shopify API PHP package](https://github.com/Sho
 
 ## 🏗️ Installation
 
-### Using Shopify CLI (Recommended)
-
 ```bash
 # Create new app from this template
 shopify app init --template="https://github.com/your-username/shopify-app-template"
@@ -59,49 +65,6 @@ php artisan migrate
 shopify app dev
 ```
 
-### Manual Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/shopify-app-template.git
-cd shopify-app-template
-
-# Install dependencies
-composer install
-npm install
-
-# Set up environment
-cp .env.example .env
-php artisan key:generate
-
-# Shopify credentials are automatically configured by Shopify CLI
-# No manual configuration needed in .env file
-
-# Run database migrations
-php artisan migrate
-
-# Start development servers
-composer dev  # Starts Laravel server, queue worker, and Vite
-```
-
-## 🔧 Environment Variables
-
-The Shopify CLI automatically configures all necessary Shopify-related environment variables. You only need to configure standard Laravel variables in your `.env` file:
-
-```env
-# App Configuration
-APP_NAME="Your Shopify App"
-APP_ENV=local
-APP_KEY=base64:your_generated_key
-APP_DEBUG=true
-APP_URL=http://localhost:8000
-
-# Database Configuration
-DB_CONNECTION=sqlite
-DB_DATABASE=database/database.sqlite
-```
-
-**Note**: Shopify credentials (API key, secret, scopes, etc.) are automatically injected by the Shopify CLI and read from the `shopify.app.toml` configuration file.
 
 ## 🏗️ Architecture
 

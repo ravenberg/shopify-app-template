@@ -2,7 +2,7 @@
 
 name = "laravel-shopify-app"
 client_id = ""
-application_url = "https://localhost:8000"
+application_url = "https://shopify-app-template.test"
 embedded = true
 
 [access_scopes]
@@ -11,7 +11,7 @@ scopes = "write_products,read_products"
 
 [auth]
 redirect_urls = [
-  "https://localhost:8000/auth/shopify/callback"
+  "https://shopify-app-template.test/auth/shopify/callback"
 ]
 
 [webhooks]
@@ -25,6 +25,6 @@ uri = "/webhooks/app/uninstalled"
 embedded = false
 
 [build]
-automatically_update_urls_on_dev = true
+automatically_update_urls_on_dev = false
 dev_store_url = ""
 include_config_on_deploy = true
