@@ -3,5 +3,5 @@ roles = ["frontend", "backend"]
 webhooks_path = "/webhooks/app/uninstalled"
 
 [commands]
-predev = "composer install && php artisan migrate && npm run cli-bridge"
+predev = "composer install && php artisan migrate && npm run cli-bridge && php artisan app:check-app-key"
 dev = "npm run dev"
