@@ -2,21 +2,22 @@
 
 A modern Shopify app template built with Laravel and React, providing a solid foundation for developing Shopify applications with seamless full-stack experience and full Shopify CLI compatibility.
 
-## 🚀 Quick Start with Shopify CLI and Laravel Herd
+## 🚀 Quick Start with Shopify CLI
 
 1. Navigate you your Laravel Herd site folder
 2. Create a new Shopify app using this template
 ```bash
 shopify app init --template="https://github.com/ravenberg/shopify-app-template"
 ```
-3. Share the url through Herd
+3. Start an ngrok tunnel
 ```bash
 cd <name-of-app-directory> && herd share
 ```
 4. In a separate terminal, start the dev server via shopify api
 ```bash
-shopify app dev --tunnel-url=<herd-share-url>
+shopify app dev --tunnel-url="<herd-share-url>:8910"
 ```   
+>_(note the port number needs to be a free port, as shopify needs it to do something with in its process. 8910 is an example that tends to be available on my machine.)_
 
 ## 🛠️ Features
 
