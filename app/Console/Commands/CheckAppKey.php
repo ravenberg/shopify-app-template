@@ -18,7 +18,7 @@ class CheckAppKey extends Command
      *
      * @var string
      */
-    protected $description = 'Creates an app key if not yet present';
+    protected $description = 'Creates an app key if not yet present. Meant for use with shopify app dev command.';
 
     /**
      * Execute the console command.
